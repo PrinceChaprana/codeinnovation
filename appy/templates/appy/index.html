@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Cryptocurrency Predictor</title>
+    <link rel="stylesheet" href="{% static 'appy/assets/bootstrap/css/bootstrap.min.css '%}" />
+    <link rel="stylesheet" href="{% static 'appy/assets/fonts/fontawesome-all.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'appy/assets/fonts/ionicons.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'appy/assets/css/Footer-Basic.css'%}" />
+    <link rel="stylesheet" href="{% static 'appy/assets/css/gradient-navbar-1.css'%}" />
+    <link rel="stylesheet" href="{% static 'appy/assets/css/gradient-navbar.css'%}" />
+    <link rel="stylesheet" href="{% static 'appy/assets/css/Search-Input-Responsive-with-Icon.css'%}" />
+    <link rel="stylesheet" href="{% static 'appy/assets/css/styles.css'%}" />
+
+    <script>
+        (function (b, i, t, C, O, I, N) {
+            window.addEventListener('load', function () {
+                if (b.getElementById(C)) return;
+                I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+                I.src = t; I.id = C; N.parentNode.insertBefore(I, N);
+            }, false)
+        })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}"><img id="logo" src="{% static 'appy/assets/img/logo.png' %}"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="text-align: left;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div id="navhome" style="text-align: right;">
+                <div class="collapse navbar-collapse" id="navcol-2" style="text-align: left;">
+                    <ul class="navbar-nav ml-auto" style="text-align: left;">
+                        <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}"><strong>Home</strong></a></li>
+                        <li class="nav-item"></li>
+                        <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'About' %}">About us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block about %}
+    <div class="row" id="searchbar">
+        <div class="col-md-10 offset-md-1">
+            <div class="card m-auto" style="max-width:850px">
+                <div class="card-body">
+                    <form class="d-flex align-items-center" method=POST action="{% url 'Search-Box' %}" >
+                    {% csrf_token %}
+                    <i class="fas fa-search d-none d-sm-block h4 text-body m-0"></i><input class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search" placeholder="Search Cryptocurrency eg. Btn,Eth,Xrp,etc" name="searchbar"><button class="btn btn-success btn-lg" type="submit">Search</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            {% block chart %}
+            <div class="btcwdgt-chart" bw-cash="true" bw-theme="light" height="100px"></div>
+            {% endblock chart %}
+        </div>
+        <div class="col-md-4">
+
+        </div>
+
+    </div>
+    {% endblock %}
+    <footer class="footer-basic">
+        <div class="social">
+            <div class="row">
+                <div class="col"><a id="socialicon" href="https://linkedin.com/in/prince-kumar-866127176/"><i class="icon ion-social-instagram"></i></a></div>
+                <div class="col"><a id="socialicon2" href="https://github.com/PrinceChaprana/"><i class="icon ion-social-github"></i></a></div>
+                <div class="col"><a id="socialicon2last" href="https://www.instagram.com/im.princekumar/"><i class="icon ion-social-linkedin-outline"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

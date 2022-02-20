@@ -1,0 +1,69 @@
+#logo {
+  width: initial;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+  padding: .0025rem .2rem;
+  font-size: 1.25rem;
+  border-radius: .3rem;
+}
+
+#searchbar {
+  padding: 20px;
+}
+
+.footer-basic .social {
+  text-align: center;
+  padding: 10px;
+  margin: 2px;
+}
+
+#socialicon {
+  color: #16ccd6;
+  font-size: 40px;
+}
+
+a {
+  color: #16ccd6;
+  text-decoration: underline;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 10px;
+  font-size: 40px;
+}
+
+#navhome {
+  padding-right: 40px;
+}
+
+nav-link active {
+  padding-left: 40px;
+}
+
+#socialicon2 {
+  color: #26bbda;
+}
+
+#socialicon2last {
+  color: #3ba4e0;
+}
+
+#socialiconLast {
+  color: #5488e6;
+}
+
+.btn {
+  color: linear-gradient(120deg, #00e4d0, #5983e8);
+}
+
+.fas.fa-search {
+  padding: 10px;
+}
+
+.btn {
+  padding: 10px;
+  background: linear-gradient(120deg, #00e4d0, #5983e8);
+}
+
